@@ -78,30 +78,37 @@ const GROWTH_FEATURES = [
   "Priority support",
 ];
 
-const FAQS = [
+// TODO: update RUN_BY_HUMAN_URL with Sam's personal page link
+const RUN_BY_HUMAN_URL = "https://www.youtube.com/@3DDesignBros";
+
+const FAQS: { q: string; a: React.ReactNode }[] = [
   {
-    q: "What's the difference between Starter and Growth?",
-    a: "Starter ($15/mo) gets you the core cost calculators, basic model tracking, and manual entry. It's fine if you're just getting started and want the math to work. Growth ($39/mo) is the full thing: Etsy sync, SimplyPrint integration, profit dashboard, unlimited models, and priority support. If you're selling on Etsy, you'll want Growth. The Etsy sync alone is worth the difference — pulling your listings in manually gets old fast.",
+    q: "What is 3D PrintForce?",
+    a: "3D PrintForce is an all-in-one order management platform built specifically for 3D print farms. It connects your Etsy shop (more marketplaces coming soon!), tracks print jobs, manages inventory, and calculates real profitability per order.",
   },
   {
-    q: "How does the 14-day trial work?",
-    a: "You get 14 days on the Growth plan, no credit card required. Full access, no watermarks, no \"upgrade to see this\" gates. At the end of 14 days, you pick a plan or your account goes on hold. No surprise charges, ever. One trial per account — if you need more time, just reply and ask.",
+    q: "Why do I need 3D PrintForce?",
+    a: "If you're running a 3D print farm, you know how painful it is to juggle orders across platforms, track costs in spreadsheets, and guess at your margins. 3D PrintForce replaces all of that with one streamlined workflow — from order to print to profit.",
   },
   {
-    q: "What happens to my old Bubble account?",
-    a: "Your Bubble account will stay accessible until April 30, 2026. After that, it's gone. The new platform doesn't import your Bubble data automatically — you'll need to set things up fresh. I know that's annoying. Here's why it's actually fine: the old platform had enough bugs that a clean start is better than carrying corrupted data over.",
+    q: "Can I cancel my subscription anytime?",
+    a: "Yes, absolutely. You can cancel your subscription at any time with no questions asked. Your plan stays active until the end of the current billing period.",
   },
   {
-    q: "How does Etsy sync work?",
-    a: "Connect your shop under Settings → Integrations → Etsy. It pulls in your active listings — title, price, and sale data. From there, you attach your models and materials to each listing, and the calculator works out your actual margin. It syncs regularly. If you update a listing on Etsy, give it a bit and it'll reflect.",
+    q: "Do you offer support?",
+    a: "Yes! Starter plans include access to our community. Growth plans include email support with faster response times.",
   },
   {
-    q: "How do I cancel?",
-    a: "Go to Settings → Billing → Cancel Subscription. Takes about 30 seconds. No retention loop, no \"are you sure? are you REALLY sure?\" — just cancel. Your data sticks around for 90 days after you cancel in case you change your mind.",
-  },
-  {
-    q: "What if something is broken or I have a problem?",
-    a: "Email sam@3dprintforce.com directly. I check it myself. I'm not going to send you to a ticket system and have you wait a week. If something's clearly a bug, I'll log it and fix it. If it's user error, I'll walk you through it without making you feel dumb.",
+    q: "Who is behind 3D PrintForce?",
+    a: (
+      <>
+        3D PrintForce is a small indie software{" "}
+        <a href={RUN_BY_HUMAN_URL} target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 underline">
+          run by a real human
+        </a>{" "}
+        named Sam.
+      </>
+    ),
   },
 ];
 
@@ -133,7 +140,6 @@ function Stars() {
 
 export default function Home() {
   const [annual, setAnnual] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const starterPrice = annual ? 9 : 15;
   const growthPrice = annual ? 23 : 39;
@@ -392,26 +398,21 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+      <section id="faq" className="py-20 bg-[#FAFAF9]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-12">
-            Common questions
+            Frequently Asked Questions
           </h2>
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             {FAQS.map((faq, i) => (
-              <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-semibold text-gray-900 text-sm">{faq.q}</span>
-                  <span className="text-gray-400 ml-4 shrink-0 text-lg">{openFaq === i ? "−" : "+"}</span>
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed bg-white border-t border-gray-100">
-                    {faq.a}
-                  </div>
-                )}
+              <div key={i} className="flex gap-3">
+                <div className="shrink-0 mt-0.5">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full border-2 border-orange-400 text-orange-500 font-bold text-xs">?</span>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{faq.a}</p>
+                </div>
               </div>
             ))}
           </div>
