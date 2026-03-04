@@ -489,79 +489,159 @@ export default function Home() {
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-20 bg-[#FAFAF9]">
+      <section id="pricing" className="py-24 bg-[#FAFAF9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-4">Simple pricing</h2>
-          <p className="text-gray-500 text-center mb-8">Start free. Upgrade when you're ready.</p>
 
-          {/* Toggle */}
-          <div className="flex items-center justify-center gap-3 mb-12">
-            <span className={`text-sm font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
-            <button
-              onClick={() => setAnnual(!annual)}
-              className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-[#FFF2ED]0" : "bg-gray-200"}`}
-            >
-              <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${annual ? "translate-x-6" : ""}`} />
-            </button>
-            <span className={`text-sm font-medium ${annual ? "text-gray-900" : "text-gray-400"}`}>
-              Annual <span className="text-[#FF4400] font-semibold">Save 40%</span>
+          {/* Header */}
+          <div className="text-center mb-10">
+            <span className="inline-block border border-[#FF4400] text-[#FF4400] rounded-full px-4 py-1 text-sm mb-5">
+              The #1 business tool for 3D print sellers
             </span>
+            <h2 className="text-3xl sm:text-5xl font-black text-[#111827] mb-4">
+              Try 3D PrintForce Free For{" "}
+              <span className="underline decoration-[#FF4400]">14 Days</span>
+            </h2>
+            <p className="text-[#57606D] text-lg max-w-xl mx-auto mb-6">
+              Join 6,200+ print sellers already tracking every order, cost, and profit — automatically. Set up in minutes.
+            </p>
+
+            {/* Avatar row */}
+            <div className="flex items-center justify-center gap-3">
+              <div className="flex -space-x-2">
+                {[
+                  { initials: "MK", bg: "#4F46E5" },
+                  { initials: "JR", bg: "#0891B2" },
+                  { initials: "DL", bg: "#16A34A" },
+                  { initials: "AT", bg: "#D97706" },
+                  { initials: "SR", bg: "#DC2626" },
+                ].map(({ initials, bg }) => (
+                  <svg key={initials} width="32" height="32" viewBox="0 0 32 32" className="rounded-full border-2 border-white">
+                    <circle cx="16" cy="16" r="16" fill={bg} />
+                    <text x="16" y="21" textAnchor="middle" fontSize="11" fontWeight="700" fill="white" fontFamily="Ubuntu, sans-serif">{initials}</text>
+                  </svg>
+                ))}
+              </div>
+              <span className="text-sm text-[#57606D]">6,200+ sellers trust 3D PrintForce</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* Starter */}
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 mb-1">Starter</h3>
-              <p className="text-gray-500 text-sm mb-4">For hobbyists getting started</p>
-              <div className="mb-6">
-                <span className="text-4xl font-black text-gray-900">${starterPrice}</span>
-                <span className="text-gray-400 text-sm">/mo{annual ? " · billed annually" : ""}</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                {STARTER_FEATURES.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
-                    <CheckIcon /> {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={CTA_URL}
-                className="block w-full text-center border-2 border-[#FF4400] text-[#FF4400] hover:bg-[#FFF2ED] font-bold py-3 rounded-xl transition-colors"
+          {/* Toggle */}
+          <div className="flex items-center justify-center gap-4 mb-12">
+            <div className="bg-gray-100 p-1 rounded-full inline-flex">
+              <button
+                onClick={() => setAnnual(false)}
+                className={`px-5 py-2 rounded-full text-sm transition-all ${!annual ? "bg-white shadow-sm font-semibold text-[#111827]" : "text-gray-500"}`}
               >
-                Start Free Trial
-              </a>
+                Monthly
+              </button>
+              <button
+                onClick={() => setAnnual(true)}
+                className={`px-5 py-2 rounded-full text-sm transition-all ${annual ? "bg-white shadow-sm font-semibold text-[#111827]" : "text-gray-500"}`}
+              >
+                Annual
+              </button>
             </div>
+            <span className="text-sm text-[#57606D]">→ Save 40% on annual</span>
+          </div>
 
-            {/* Growth */}
-            <div className="bg-gray-900 rounded-2xl border-2 border-[#FF4400] p-8 shadow-xl relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFF2ED]0 text-white text-xs font-bold px-3 py-1 rounded-full">
-                ⭐ Most Popular
-              </span>
-              <h3 className="text-xl font-bold text-white mb-1">Growth</h3>
-              <p className="text-gray-400 text-sm mb-4">For serious sellers scaling up</p>
-              <div className="mb-6">
-                <span className="text-4xl font-black text-white">${growthPrice}</span>
-                <span className="text-gray-400 text-sm">/mo{annual ? " · billed annually" : ""}</span>
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto items-start">
+
+            {/* Starter */}
+            <div className="bg-white rounded-[8px] border border-[#E3E6EB] p-8">
+              <h3 className="text-xl font-bold text-[#111827] mb-4">Starter</h3>
+              <div className="flex items-end gap-1 mb-6">
+                <span className="text-2xl font-bold text-[#111827] leading-none">$</span>
+                <span className="text-5xl font-black text-[#111827] leading-none">{annual ? 9 : 15}</span>
+                <span className="text-sm text-[#57606D] mb-1 ml-1">per seller / per month</span>
               </div>
-              <ul className="space-y-3 mb-8">
-                {GROWTH_FEATURES.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                    <svg className="w-4 h-4 text-[#FF6D3C] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+
+              {/* Spec pills */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["Up to 2 Printers", "Manual Order Entry", "1 Marketplace"].map((pill) => (
+                  <span key={pill} className="bg-gray-100 rounded-lg py-2 px-4 text-center text-sm font-medium text-[#111827]">
+                    {pill}
+                  </span>
+                ))}
+              </div>
+
+              <hr className="border-[#E3E6EB] mb-5" />
+
+              <p className="text-xs text-[#57606D] uppercase tracking-wide font-semibold mb-3">Includes:</p>
+              <ul className="space-y-2 mb-8">
+                {["Profit calculator", "Filament & cost tracking", "Shipping profiles", "Supplies tracking", "Basic model library"].map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-[#111827]">
+                    <svg className="w-4 h-4 text-[#FF4400] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     {f}
                   </li>
                 ))}
               </ul>
+
               <a
                 href={CTA_URL}
-                className="block w-full text-center bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold py-3 rounded-xl transition-all shadow-sm"
+                className="block w-full text-center bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold py-3 rounded-lg transition-all"
               >
-                Start Free Trial
+                Start Free Trial →
               </a>
+              <p className="text-center text-xs text-[#57606D] mt-2">No credit card required</p>
+            </div>
+
+            {/* Growth */}
+            <div className="relative md:scale-105 bg-white rounded-[8px] border border-[#FF4400] p-8 md:p-10">
+              {/* Badge */}
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span className="inline-block bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] text-white text-xs font-bold px-4 py-1.5 rounded-full whitespace-nowrap">
+                  MOST POPULAR
+                </span>
+              </div>
+
+              <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-[#FF4400] to-[#FF6D3C] bg-clip-text text-transparent">
+                Growth
+              </h3>
+              <div className="flex items-end gap-1 mb-6">
+                <span className="text-2xl font-bold text-[#111827] leading-none">$</span>
+                <span className="text-5xl font-black text-[#111827] leading-none">{annual ? 23 : 39}</span>
+                <span className="text-sm text-[#57606D] mb-1 ml-1">per seller / per month</span>
+              </div>
+
+              {/* Spec pills — orange tint */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["Unlimited Printers", "Auto Order Sync", "Etsy + Amazon"].map((pill) => (
+                  <span key={pill} className="bg-[#FFF2ED] rounded-lg py-2 px-4 text-center text-sm font-medium text-[#111827]">
+                    {pill}
+                  </span>
+                ))}
+              </div>
+
+              <hr className="border-[#E3E6EB] mb-5" />
+
+              <p className="text-xs text-[#57606D] italic mb-3">← Everything in Starter, plus...</p>
+              <ul className="space-y-2 mb-8">
+                {["Etsy & Amazon order sync", "Automatic order import", "Print queue automation", "SimplyPrint integration", "Profit dashboard", "Priority support"].map((f) => (
+                  <li key={f} className="flex items-center gap-2 text-sm text-[#111827]">
+                    <svg className="w-4 h-4 text-[#FF4400] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={CTA_URL}
+                className="block w-full text-center bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold py-3 rounded-lg transition-all shadow-sm"
+              >
+                Start Free Trial →
+              </a>
+              <p className="text-center text-xs text-[#57606D] mt-2">No credit card required</p>
             </div>
           </div>
-          <p className="text-center text-gray-400 text-sm mt-6">No credit card required. 14-day free trial on Growth.</p>
+
+          <p className="text-center text-[#57606D] text-sm mt-10">
+            Cancel anytime. No contracts. Grandfathered pricing for current Bubble subscribers.
+          </p>
         </div>
       </section>
 
