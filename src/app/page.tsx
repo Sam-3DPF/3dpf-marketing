@@ -1,0 +1,456 @@
+"use client";
+
+import { useState } from "react";
+
+const CTA_URL = "https://app.3dprintforce.com/login?v=signup";
+
+const NAV_LINKS = [
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
+];
+
+const FEATURES = [
+  {
+    title: "Profit Calculator",
+    subtitle: "Know your exact profit before you list.",
+    body: "Track filament, labor, shipping, and supplies. Set your margin. Get the right price. No guesswork — just numbers you can trust.",
+    color: "from-orange-400 to-orange-600",
+  },
+  {
+    title: "Order Management",
+    subtitle: "Every order. Every platform. One place.",
+    body: "Pull orders from Etsy and Amazon automatically. Track status from New → Printing → Printed → Shipped in one clean dashboard.",
+    color: "from-blue-400 to-blue-600",
+  },
+  {
+    title: "Filament & Cost Tracking",
+    subtitle: "Track every gram. Know every cost.",
+    body: "Multi-part and multi-color support built in. Exact filament usage per model. Full cost breakdown per order, every time.",
+    color: "from-purple-400 to-purple-600",
+  },
+  {
+    title: "Shipping Profiles",
+    subtitle: "Stop losing money on shipping.",
+    body: "Build shipping profiles once and they apply automatically across all your models and orders. Know your shipping costs before you print.",
+    color: "from-green-400 to-green-600",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "I was losing money on almost every Amazon order and didn't know it. 3D Print Force showed me exactly where my margins were bleeding. Raised my prices 20% the next week.",
+    name: "Marcus T.",
+    role: "Etsy seller, 12 printers",
+  },
+  {
+    quote:
+      "The auto order sync alone saves me 30 minutes a day. I used to copy orders from Etsy into a spreadsheet. Now they just appear and I can focus on printing.",
+    name: "Jenna R.",
+    role: "Amazon & Etsy seller, 6 printers",
+  },
+  {
+    quote:
+      "Finally a tool built by someone who actually sells 3D prints. The filament cost tracking is incredibly accurate. My profit numbers are real now, not guesses.",
+    name: "Derek L.",
+    role: "Etsy seller, 4 printers",
+  },
+];
+
+// PLACEHOLDER testimonials — replace with real customer quotes before launch
+
+const STARTER_FEATURES = [
+  "Profit calculator",
+  "Up to 2 printers",
+  "Manual order entry",
+  "Basic cost tracking",
+  "Filament & supply tracking",
+];
+
+const GROWTH_FEATURES = [
+  "Everything in Starter",
+  "Etsy & Amazon order sync",
+  "Unlimited printers",
+  "Auto order import",
+  "Print queue automation",
+  "SimplyPrint integration",
+  "Priority support",
+];
+
+const FAQS = [
+  {
+    q: "Is there a free trial?",
+    a: "Yes. You get 14 days of full Growth tier access, no credit card required.",
+  },
+  {
+    q: "Can I keep my current Bubble pricing?",
+    a: "Yes. If you're a current subscriber migrating from Bubble, your price is grandfathered as long as your subscription stays active.",
+  },
+  {
+    q: "Does it work with Etsy and Amazon?",
+    a: "Yes. Connect both platforms and orders import automatically. Status updates sync back when you mark orders as shipped.",
+  },
+  {
+    q: "What is SimplyPrint?",
+    a: "SimplyPrint is a 3D printer management platform. 3D Print Force integrates with it to automatically queue print jobs the moment an order comes in.",
+  },
+  {
+    q: "Can I cancel anytime?",
+    a: "Yes. No contracts, no cancellation fees. Cancel from your account page at any time.",
+  },
+  {
+    q: "I sell on other platforms. Can I still use 3D Print Force?",
+    a: "Yes. You can manually enter orders from any platform. Automatic sync is available for Etsy and Amazon on the Growth plan.",
+  },
+];
+
+function CheckIcon() {
+  return (
+    <svg
+      className="w-4 h-4 text-orange-500 shrink-0 mt-0.5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2.5}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+  );
+}
+
+function Stars() {
+  return (
+    <div className="flex gap-0.5 mb-3">
+      {[...Array(5)].map((_, i) => (
+        <svg key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+export default function Home() {
+  const [annual, setAnnual] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const starterPrice = annual ? 9 : 15;
+  const growthPrice = annual ? 23 : 39;
+
+  return (
+    <div className="min-h-screen bg-[#FAFAF9]">
+      {/* NAV */}
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-2 font-bold text-lg text-gray-900">
+            <span className="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center text-white text-xs font-black">3D</span>
+            3D Print Force
+          </a>
+          <div className="hidden sm:flex items-center gap-6">
+            {NAV_LINKS.map((l) => (
+              <a key={l.label} href={l.href} className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </div>
+          <a
+            href={CTA_URL}
+            className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+          >
+            Start Free Trial
+          </a>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16 text-center">
+        <span className="inline-block text-orange-500 font-semibold text-sm mb-4 tracking-wide uppercase">
+          Built for 3D print sellers
+        </span>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
+          Stop running your print farm<br className="hidden sm:block" /> on spreadsheets.
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          Track every order, cost, and profit across Etsy and Amazon — automatically.
+          The business brain behind 6,200+ print farms.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
+          <a
+            href={CTA_URL}
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+          >
+            Start 14-Day Free Trial
+          </a>
+          <a
+            href="#features"
+            className="border-2 border-gray-200 hover:border-gray-300 text-gray-700 font-semibold px-8 py-4 rounded-xl text-lg transition-colors bg-white"
+          >
+            See how it works
+          </a>
+        </div>
+        <p className="text-sm text-gray-400">
+          ✓ No credit card required &nbsp;·&nbsp; ✓ 14-day free trial &nbsp;·&nbsp; ✓ Cancel anytime
+        </p>
+
+        {/* Dashboard placeholder */}
+        <div className="mt-14 mx-auto max-w-4xl rounded-2xl overflow-hidden shadow-2xl border border-gray-200 aspect-video bg-gradient-to-br from-orange-400 via-orange-500 to-orange-700 flex items-center justify-center">
+          <div className="text-center text-white/80">
+            <div className="text-5xl mb-3">📊</div>
+            <p className="text-lg font-semibold">Dashboard screenshot coming soon</p>
+            <p className="text-sm opacity-70 mt-1">Real screenshots will be added before launch</p>
+          </div>
+        </div>
+      </section>
+
+      {/* SOCIAL PROOF BAR */}
+      <section className="bg-gray-900 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-gray-400 text-sm font-medium uppercase tracking-widest mb-8">
+            6,200+ print farms trust 3D Print Force
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {[
+              { stat: "6,200+", label: "Active Users" },
+              { stat: "$0", label: "Setup Cost" },
+              { stat: "14-Day", label: "Free Trial" },
+            ].map(({ stat, label }) => (
+              <div key={label} className="text-center">
+                <div className="text-4xl font-black text-white mb-1">{stat}</div>
+                <div className="text-gray-400 text-sm">{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROBLEM */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-4">Sound familiar?</h2>
+        <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">
+          Most 3D print sellers are flying blind. Here's what that looks like.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              emoji: "📊",
+              title: "Drowning in spreadsheets",
+              body: "Manually updating prices every time filament costs change. One formula breaks and your whole margin model is wrong.",  // eslint-disable-line
+            },
+            {
+              emoji: "❓",
+              title: "Guessing at profits",
+              body: "Shipping fees, platform cuts, and supply costs eating into margins without you knowing it until the end of the month.",
+            },
+            {
+              emoji: "⏱️",
+              title: "Orders slipping through",
+              body: "Juggling Etsy, Amazon, and custom orders with no single source of truth. Things get missed. Customers get frustrated.",
+            },
+          ].map(({ emoji, title, body }) => (
+            <div key={title} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+              <div className="text-3xl mb-3">{emoji}</div>
+              <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section id="features" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-4">
+            Everything your print farm needs
+          </h2>
+          <p className="text-gray-500 text-center mb-16 max-w-xl mx-auto">
+            Built by a 3D print seller, for 3D print sellers.
+          </p>
+          <div className="space-y-20">
+            {FEATURES.map((f, i) => (
+              <div
+                key={f.title}
+                className={`flex flex-col ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
+              >
+                <div className="flex-1">
+                  <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-3">{f.title}</h3>
+                  <p className="text-orange-500 font-semibold mb-4">{f.subtitle}</p>
+                  <p className="text-gray-600 leading-relaxed text-lg">{f.body}</p>
+                  <a href={CTA_URL} className="inline-block mt-6 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+                    Try it free →
+                  </a>
+                </div>
+                <div className={`flex-1 rounded-2xl bg-gradient-to-br ${f.color} aspect-video flex items-center justify-center shadow-xl`}>
+                  <div className="text-center text-white/80">
+                    <p className="font-semibold">Screenshot coming soon</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="py-20 bg-gray-900">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-center mb-4">
+            Sellers who made the switch
+          </h2>
+          <p className="text-gray-400 text-center mb-12">Real print farms. Real results.</p>
+          {/* PLACEHOLDER — replace with real customer testimonials before launch */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.name} className="bg-gray-800 rounded-2xl p-6 border border-gray-700">
+                <Stars />
+                <p className="text-gray-300 leading-relaxed mb-5 text-sm">"{t.quote}"</p>
+                <div>
+                  <p className="text-white font-semibold text-sm">{t.name}</p>
+                  <p className="text-gray-500 text-xs">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section id="pricing" className="py-20 bg-[#FAFAF9]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-4">Simple pricing</h2>
+          <p className="text-gray-500 text-center mb-8">Start free. Upgrade when you're ready.</p>
+
+          {/* Toggle */}
+          <div className="flex items-center justify-center gap-3 mb-12">
+            <span className={`text-sm font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
+            <button
+              onClick={() => setAnnual(!annual)}
+              className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-orange-500" : "bg-gray-200"}`}
+            >
+              <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${annual ? "translate-x-6" : ""}`} />
+            </button>
+            <span className={`text-sm font-medium ${annual ? "text-gray-900" : "text-gray-400"}`}>
+              Annual <span className="text-orange-500 font-semibold">Save 40%</span>
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {/* Starter */}
+            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Starter</h3>
+              <p className="text-gray-500 text-sm mb-4">For hobbyists getting started</p>
+              <div className="mb-6">
+                <span className="text-4xl font-black text-gray-900">${starterPrice}</span>
+                <span className="text-gray-400 text-sm">/mo{annual ? " · billed annually" : ""}</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {STARTER_FEATURES.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-gray-600">
+                    <CheckIcon /> {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={CTA_URL}
+                className="block w-full text-center border-2 border-orange-500 text-orange-500 hover:bg-orange-50 font-bold py-3 rounded-xl transition-colors"
+              >
+                Start Free Trial
+              </a>
+            </div>
+
+            {/* Growth */}
+            <div className="bg-gray-900 rounded-2xl border-2 border-orange-500 p-8 shadow-xl relative">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                ⭐ Most Popular
+              </span>
+              <h3 className="text-xl font-bold text-white mb-1">Growth</h3>
+              <p className="text-gray-400 text-sm mb-4">For serious sellers scaling up</p>
+              <div className="mb-6">
+                <span className="text-4xl font-black text-white">${growthPrice}</span>
+                <span className="text-gray-400 text-sm">/mo{annual ? " · billed annually" : ""}</span>
+              </div>
+              <ul className="space-y-3 mb-8">
+                {GROWTH_FEATURES.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
+                    <svg className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={CTA_URL}
+                className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors"
+              >
+                Start Free Trial
+              </a>
+            </div>
+          </div>
+          <p className="text-center text-gray-400 text-sm mt-6">No credit card required. 14-day free trial on Growth.</p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-12">
+            Common questions
+          </h2>
+          <div className="space-y-3">
+            {FAQS.map((faq, i) => (
+              <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors"
+                >
+                  <span className="font-semibold text-gray-900 text-sm">{faq.q}</span>
+                  <span className="text-gray-400 ml-4 shrink-0 text-lg">{openFaq === i ? "−" : "+"}</span>
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed bg-white border-t border-gray-100">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CLOSING CTA */}
+      <section className="bg-gray-900 py-24">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-5xl font-black text-white mb-4">
+            Your print farm deserves better than a spreadsheet.
+          </h2>
+          <p className="text-gray-400 text-lg mb-10">
+            Join 6,200+ sellers who track every order, cost, and profit — automatically.
+          </p>
+          <a
+            href={CTA_URL}
+            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-10 py-5 rounded-xl text-xl transition-colors"
+          >
+            Start Your Free Trial
+          </a>
+          <p className="text-gray-500 text-sm mt-4">No credit card required. 14-day free trial.</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-gray-950 py-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="w-6 h-6 rounded bg-orange-500 flex items-center justify-center text-white text-xs font-black">3D</span>
+            <span className="text-gray-400 text-sm font-medium">3D Print Force — Built for 3D print sellers.</span>
+          </div>
+          <div className="flex gap-6">
+            <a href="https://dev.3dprintforce.com/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy Policy</a>
+            <a href="https://dev.3dprintforce.com/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms of Service</a>
+          </div>
+          <p className="text-gray-600 text-xs">© 2025 3D PrintForce LLC. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
