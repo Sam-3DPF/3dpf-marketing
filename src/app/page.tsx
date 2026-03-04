@@ -104,7 +104,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
     a: (
       <>
         3D PrintForce is a small indie software{" "}
-        <a href={RUN_BY_HUMAN_URL} target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 underline">
+        <a href={RUN_BY_HUMAN_URL} target="_blank" rel="noopener noreferrer" className="text-[#FF4400] hover:text-[#E53D00] underline">
           run by a real human
         </a>{" "}
         named Sam.
@@ -116,7 +116,7 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
 function CheckIcon() {
   return (
     <svg
-      className="w-4 h-4 text-orange-500 shrink-0 mt-0.5"
+      className="w-4 h-4 text-[#FF4400] shrink-0 mt-0.5"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -163,7 +163,7 @@ export default function Home() {
           </div>
           <a
             href={CTA_URL}
-            className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+            className="bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm"
           >
             Start Free Trial
           </a>
@@ -172,7 +172,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-20 pb-16 text-center">
-        <span className="inline-block text-orange-500 font-semibold text-sm mb-4 tracking-wide uppercase">
+        <span className="inline-block text-[#FF4400] font-semibold text-sm mb-4 tracking-wide uppercase">
           Built for 3D print sellers
         </span>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-tight mb-6">
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
           <a
             href={CTA_URL}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl text-lg transition-colors"
+            className="bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-sm"
           >
             Start 14-Day Free Trial
           </a>
@@ -392,9 +392,9 @@ export default function Home() {
               >
                 <div className="flex-1">
                   <h3 className="text-2xl sm:text-3xl font-black text-gray-900 mb-3">{f.title}</h3>
-                  <p className="text-orange-500 font-semibold mb-4">{f.subtitle}</p>
+                  <p className="text-[#FF4400] font-semibold mb-4">{f.subtitle}</p>
                   <p className="text-gray-600 leading-relaxed text-lg">{f.body}</p>
-                  <a href={CTA_URL} className="inline-block mt-6 text-orange-500 font-semibold hover:text-orange-600 transition-colors">
+                  <a href={CTA_URL} className="inline-block mt-6 text-[#FF4400] font-semibold hover:text-[#E53D00] transition-colors">
                     Try it free →
                   </a>
                 </div>
@@ -499,12 +499,12 @@ export default function Home() {
             <span className={`text-sm font-medium ${!annual ? "text-gray-900" : "text-gray-400"}`}>Monthly</span>
             <button
               onClick={() => setAnnual(!annual)}
-              className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-orange-500" : "bg-gray-200"}`}
+              className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-[#FFF2ED]0" : "bg-gray-200"}`}
             >
               <span className={`absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow transition-transform ${annual ? "translate-x-6" : ""}`} />
             </button>
             <span className={`text-sm font-medium ${annual ? "text-gray-900" : "text-gray-400"}`}>
-              Annual <span className="text-orange-500 font-semibold">Save 40%</span>
+              Annual <span className="text-[#FF4400] font-semibold">Save 40%</span>
             </span>
           </div>
 
@@ -526,15 +526,15 @@ export default function Home() {
               </ul>
               <a
                 href={CTA_URL}
-                className="block w-full text-center border-2 border-orange-500 text-orange-500 hover:bg-orange-50 font-bold py-3 rounded-xl transition-colors"
+                className="block w-full text-center border-2 border-[#FF4400] text-[#FF4400] hover:bg-[#FFF2ED] font-bold py-3 rounded-xl transition-colors"
               >
                 Start Free Trial
               </a>
             </div>
 
             {/* Growth */}
-            <div className="bg-gray-900 rounded-2xl border-2 border-orange-500 p-8 shadow-xl relative">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+            <div className="bg-gray-900 rounded-2xl border-2 border-[#FF4400] p-8 shadow-xl relative">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#FFF2ED]0 text-white text-xs font-bold px-3 py-1 rounded-full">
                 ⭐ Most Popular
               </span>
               <h3 className="text-xl font-bold text-white mb-1">Growth</h3>
@@ -546,7 +546,7 @@ export default function Home() {
               <ul className="space-y-3 mb-8">
                 {GROWTH_FEATURES.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm text-gray-300">
-                    <svg className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-4 h-4 text-[#FF6D3C] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                     {f}
@@ -555,7 +555,7 @@ export default function Home() {
               </ul>
               <a
                 href={CTA_URL}
-                className="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition-colors"
+                className="block w-full text-center bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold py-3 rounded-xl transition-all shadow-sm"
               >
                 Start Free Trial
               </a>
@@ -575,7 +575,7 @@ export default function Home() {
             {FAQS.map((faq, i) => (
               <div key={i} className="flex gap-3">
                 <div className="shrink-0 mt-0.5">
-                  <span className="flex items-center justify-center w-6 h-6 rounded-full border-2 border-orange-400 text-orange-500 font-bold text-xs">?</span>
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full border-2 border-[#FF4400] text-[#FF4400] font-bold text-xs">?</span>
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
@@ -598,7 +598,7 @@ export default function Home() {
           </p>
           <a
             href={CTA_URL}
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-10 py-5 rounded-xl text-xl transition-colors"
+            className="inline-block bg-gradient-to-b from-[#FF4400] to-[#FF6D3C] hover:from-[#E53D00] hover:to-[#F05A28] text-white font-bold px-10 py-5 rounded-xl text-xl transition-all shadow-sm"
           >
             Start Your Free Trial
           </a>
