@@ -21,7 +21,7 @@ const FEATURES = [
   {
     title: "Order Management",
     subtitle: "Every order. Every platform. One place.",
-    body: "Pull orders from Etsy and Amazon automatically. Track status from New → Printing → Printed → Shipped in one clean dashboard.",
+    body: "Pull orders from Etsy automatically. Track status from New → Printing → Printed → Shipped in one clean dashboard.",
     color: "from-blue-400 to-blue-600",
   },
   {
@@ -41,7 +41,7 @@ const FEATURES = [
 const TESTIMONIALS = [
   {
     quote:
-      "I was losing money on almost every Amazon order and didn't know it. 3D PrintForce showed me exactly where my margins were bleeding. Raised my prices 20% the next week.",
+      "I was losing money on almost every order and didn't know it. 3D PrintForce showed me exactly where my margins were bleeding. Raised my prices 20% the next week.",
     name: "Marcus T.",
     role: "Etsy seller, 12 printers",
   },
@@ -49,7 +49,7 @@ const TESTIMONIALS = [
     quote:
       "The auto order sync alone saves me 30 minutes a day. I used to copy orders from Etsy into a spreadsheet. Now they just appear and I can focus on printing.",
     name: "Jenna R.",
-    role: "Amazon & Etsy seller, 6 printers",
+    role: "Etsy seller, 6 printers",
   },
   {
     quote:
@@ -71,7 +71,7 @@ const STARTER_FEATURES = [
 
 const GROWTH_FEATURES = [
   "Everything in Starter",
-  "Etsy & Amazon order sync",
+  "Etsy order sync",
   "Unlimited printers",
   "Auto order import",
   "Print queue automation",
@@ -179,7 +179,7 @@ export default function Home() {
           Stop running your print farm<br className="hidden sm:block" /> on spreadsheets.
         </h1>
         <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          Track every order, cost, and profit across Etsy and Amazon — automatically.
+          Track every order, cost, and profit across Etsy — automatically.
           The business brain behind 6,200+ print farms.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
@@ -282,7 +282,7 @@ export default function Home() {
               </div>
               <ul className="space-y-4">
                 {[
-                  "Every order synced from Etsy and Amazon with a clear status — New, Printing, Printed, Shipped. You always know what's next.",
+                  "Every order synced from Etsy with a clear status — New, Printing, Printed, Shipped. You always know what's next.",
                   "Real profit per order calculated the moment it comes in — no surprises at the end of the month.",
                   "Update a price once. Every listing recalculates automatically.",
                   "One view shows you exactly what's printed and ready to ship — no digging required.",
@@ -319,17 +319,28 @@ export default function Home() {
                 Connect the tools you already use.
               </h2>
               <p className="text-[#57606D] text-lg leading-relaxed mb-4">
-                3D PrintForce works alongside the software that runs your print farm. Connect SimplyPrint to automate your print queue, sync files with Google Drive, and more.
+                3D PrintForce works alongside the platforms and software that run your print farm. Sync orders from Etsy, connect SimplyPrint to automate your print queue, and sync files with Google Drive.
               </p>
               <p className="text-sm text-[#57606D] opacity-70">More integrations coming soon.</p>
             </div>
 
             {/* RIGHT: integration cards */}
             <div className="flex-1 w-full">
-              <div className="relative flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:items-start">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-                {/* Card 1: SimplyPrint */}
-                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm">
+                {/* Card 1: Etsy */}
+                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 shadow-sm">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-[#F1641E] flex items-center justify-center">
+                    <span className="text-white font-black text-lg leading-none">E</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#111827] text-sm">Etsy</p>
+                    <p className="text-[#57606D] text-xs mt-0.5">Order sync &amp; listings</p>
+                  </div>
+                </div>
+
+                {/* Card 2: SimplyPrint */}
+                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 shadow-sm">
                   <div className="shrink-0 w-11 h-11 rounded-lg bg-[#0D9488] flex items-center justify-center">
                     <span className="text-white font-black text-base leading-none">SP</span>
                   </div>
@@ -339,8 +350,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Card 2: Google Drive */}
-                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm sm:mt-8">
+                {/* Card 3: Google Drive */}
+                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 shadow-sm">
                   <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-[#E3E6EB] flex items-center justify-center text-2xl">
                     <svg viewBox="0 0 87.3 78" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
@@ -357,8 +368,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Card 3: More coming soon */}
-                <div className="bg-[#F9FAFB] border border-dashed border-[#D1D5DB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm sm:self-end">
+                {/* Card 4: More coming soon */}
+                <div className="bg-[#F9FAFB] border border-dashed border-[#D1D5DB] rounded-xl p-5 flex items-center gap-4 shadow-sm">
                   <div className="shrink-0 w-11 h-11 rounded-lg bg-[#F3F4F6] border border-[#E3E6EB] flex items-center justify-center">
                     <span className="text-[#9CA3AF] font-black text-xl leading-none">+</span>
                   </div>
@@ -456,11 +467,11 @@ export default function Home() {
                 </p>
 
                 <p>
-                  I know because I was doing the same thing. I run my own print farm. I sell on Etsy and Amazon. I was manually updating prices every time PLA went up, digging through Etsy&apos;s order manager to figure out what was printed and what wasn&apos;t, and building increasingly elaborate spreadsheets that required babysitting. At some point I realized: nobody had built the tool I actually needed.
+                  I know because I was doing the same thing. I run my own print farm. I sell on Etsy. I was manually updating prices every time PLA went up, digging through Etsy&apos;s order manager to figure out what was printed and what wasn&apos;t, and building increasingly elaborate spreadsheets that required babysitting. At some point I realized: nobody had built the tool I actually needed.
                 </p>
 
                 <p className="font-semibold text-[#111827]">
-                  So I built it. 3D PrintForce is pricing software that knows what your prints actually cost — filament, labor, shipping, platform fees — and surfaces that information in a way you can act on. Connect your Etsy and Amazon shops, and your orders flow in automatically. No spreadsheets. No guessing.
+                  So I built it. 3D PrintForce is pricing software that knows what your prints actually cost — filament, labor, shipping, platform fees — and surfaces that information in a way you can act on. Connect your Etsy shop, and your orders flow in automatically. No spreadsheets. No guessing.
                 </p>
 
                 <p>
@@ -608,7 +619,7 @@ export default function Home() {
 
               {/* Spec pills — orange tint */}
               <div className="flex flex-wrap gap-2 mb-6">
-                {["Unlimited Printers", "Auto Order Sync", "Etsy + Amazon"].map((pill) => (
+                {["Unlimited Printers", "Auto Order Sync", "Etsy Sync"].map((pill) => (
                   <span key={pill} className="bg-[#FFF2ED] rounded-lg py-2 px-4 text-center text-sm font-medium text-[#111827]">
                     {pill}
                   </span>
@@ -619,7 +630,7 @@ export default function Home() {
 
               <p className="text-xs text-[#57606D] italic mb-3">← Everything in Starter, plus...</p>
               <ul className="space-y-2 mb-8">
-                {["Etsy & Amazon order sync", "Automatic order import", "Print queue automation", "SimplyPrint integration", "Profit dashboard", "Priority support"].map((f) => (
+                {["Etsy order sync", "Automatic order import", "Print queue automation", "SimplyPrint integration", "Profit dashboard", "Priority support"].map((f) => (
                   <li key={f} className="flex items-center gap-2 text-sm text-[#111827]">
                     <svg className="w-4 h-4 text-[#FF4400] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />

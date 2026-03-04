@@ -7,7 +7,7 @@ const ubuntu = Ubuntu({ subsets: ["latin"], weight: ["400", "500", "700"] });
 export const metadata: Metadata = {
   title: "3D PrintForce — Business Software for 3D Print Sellers",
   description:
-    "Track every order, cost, and profit across Etsy and Amazon — automatically. The business brain behind 6,200+ print farms.",
+    "Track every order, cost, and profit across Etsy — automatically. The business brain behind 6,200+ print farms.",
   robots: {
     index: true,
     follow: true,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "3D PrintForce — Business Software for 3D Print Sellers",
     description:
-      "Track every order, cost, and profit across Etsy and Amazon — automatically.",
+      "Track every order, cost, and profit across Etsy — automatically.",
   },
 };
 
@@ -34,7 +34,7 @@ const organizationSchema = {
   url: "https://www.3dprintforce.com",
   logo: "https://www.3dprintforce.com/logo.png",
   description:
-    "Business software for 3D print sellers. Track orders, costs, and profit across Etsy and Amazon automatically.",
+    "Business software for 3D print sellers. Track orders, costs, and profit across Etsy automatically.",
   founder: {
     "@type": "Person",
     name: "Sam Erickson",
