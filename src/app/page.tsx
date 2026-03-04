@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "Changelog", href: "/changelog" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -551,23 +552,71 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-gray-950 py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="3D PrintForce" className="h-6 w-auto opacity-60" />
-            <span className="text-gray-500 text-sm">
-              Run by a real human —{" "}
-              <a href="/sam" className="text-gray-400 hover:text-gray-200 underline transition-colors">
-                Sam Erickson
+      <footer className="bg-[#111827]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* Brand */}
+            <div className="sm:col-span-2 lg:col-span-1">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="3D PrintForce" className="h-8 w-auto mb-4 opacity-90" />
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                The business OS for 3D print sellers.
+              </p>
+              <p className="text-gray-600 text-xs">© 2025 3D PrintForce LLC</p>
+            </div>
+
+            {/* Product */}
+            <div>
+              <h3 className="text-white text-sm font-semibold mb-4">Product</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "Features", href: "#features" },
+                  { label: "Pricing", href: "#pricing" },
+                  { label: "Changelog", href: "/changelog" },
+                  { label: "Blog", href: "/blog" },
+                ].map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-white text-sm font-semibold mb-4">Company</h3>
+              <ul className="space-y-3">
+                {[
+                  { label: "About", href: "/sam" },
+                  { label: "FAQ", href: "#faq" },
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "Terms of Service", href: "/terms" },
+                ].map((l) => (
+                  <li key={l.label}>
+                    <a href={l.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Get Started */}
+            <div>
+              <h3 className="text-white text-sm font-semibold mb-4">Get Started</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                Start your free 14-day trial today.
+              </p>
+              <a
+                href={CTA_URL}
+                className="inline-block bg-[#FF7A28] hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors"
+              >
+                Start Free Trial
               </a>
-            </span>
+            </div>
           </div>
-          <div className="flex gap-6">
-            <a href="https://dev.3dprintforce.com/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy Policy</a>
-            <a href="https://dev.3dprintforce.com/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms of Service</a>
-          </div>
-          <p className="text-gray-600 text-xs">© 2025 3D PrintForce LLC. All rights reserved.</p>
         </div>
       </footer>
     </div>
