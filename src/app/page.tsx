@@ -140,7 +140,7 @@ function Stars() {
 }
 
 export default function Home() {
-  const [annual, setAnnual] = useState(false);
+  const [annual, setAnnual] = useState(true);
 
   const starterPrice = annual ? 9 : 15;
   const growthPrice = annual ? 23 : 39;
@@ -300,7 +300,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-[#111827] font-bold text-xl mt-12">
-            3D PrintForce is everything your print farm&apos;s business software should have been.
+            3D PrintForce is everything you wish your spreadsheet was.
           </p>
         </div>
       </section>
