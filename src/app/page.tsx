@@ -230,36 +230,81 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROBLEM */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
-        <h2 className="text-3xl sm:text-4xl font-black text-gray-900 text-center mb-4">Sound familiar?</h2>
-        <p className="text-gray-500 text-center mb-12 max-w-xl mx-auto">
-          Most 3D print sellers are flying blind. Here's what that looks like.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              emoji: "📊",
-              title: "Drowning in spreadsheets",
-              body: "Manually updating prices every time filament costs change. One formula breaks and your whole margin model is wrong.",  // eslint-disable-line
-            },
-            {
-              emoji: "❓",
-              title: "Guessing at profits",
-              body: "Shipping fees, platform cuts, and supply costs eating into margins without you knowing it until the end of the month.",
-            },
-            {
-              emoji: "⏱️",
-              title: "Orders slipping through",
-              body: "Juggling Etsy, Amazon, and custom orders with no single source of truth. Things get missed. Customers get frustrated.",
-            },
-          ].map(({ emoji, title, body }) => (
-            <div key={title} className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
-              <div className="text-3xl mb-3">{emoji}</div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{body}</p>
+      {/* BEFORE / AFTER */}
+      <section className="bg-gray-950 py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <h2 className="text-3xl sm:text-4xl font-black text-white text-center mb-3">
+            Managing a print farm without 3D PrintForce is...
+          </h2>
+          <p className="text-center text-2xl sm:text-3xl font-black mb-14">
+            <span className="text-red-400">chaotic</span>
+            <span className="text-gray-400"> and </span>
+            <span className="text-red-400">expensive.</span>
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* WITHOUT */}
+            <div className="bg-gray-900 border border-red-900/40 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-9 h-9 rounded-lg bg-red-900/60 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </span>
+                <span className="font-bold text-red-400 text-lg">Without 3D PrintForce</span>
+              </div>
+              <ul className="space-y-5">
+                {[
+                  "Tracking orders across Etsy and Amazon in separate tabs and spreadsheets",
+                  "Guessing at profit margins until the end of the month — then being surprised",
+                  "Manually calculating filament, labor, and shipping for every single listing",
+                  "Orders slip through the cracks when you're busy at the printer",
+                  "No idea which products are actually making you money",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="w-4 h-4 text-red-500 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+
+            {/* WITH */}
+            <div className="bg-gray-900 border border-green-900/40 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-9 h-9 rounded-lg bg-green-900/60 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span className="font-bold text-green-400 text-lg">With 3D PrintForce</span>
+              </div>
+              <ul className="space-y-5">
+                {[
+                  "Every order from every platform in one dashboard, synced automatically",
+                  "Real profit per order calculated the moment it comes in — no surprises",
+                  "Costs attached to every model once. Filament, labor, shipping — done.",
+                  "New orders go straight to your print queue without you touching anything",
+                  "Know exactly which listings to scale and which ones to drop",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="w-4 h-4 text-green-400 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-white font-bold text-xl mt-12">
+            3D PrintForce is{" "}
+            <span className="text-orange-400 underline decoration-wavy decoration-orange-500/50">everything</span>
+            {" "}your print farm&apos;s business software should have been.
+          </p>
         </div>
       </section>
 
