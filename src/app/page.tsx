@@ -304,6 +304,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INTEGRATIONS */}
+      <section className="bg-white py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+
+            {/* LEFT: text */}
+            <div className="flex-1 max-w-lg">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#FF7A28] border border-[#FF7A28] rounded-full px-3 py-1 mb-6 uppercase">
+                🔌 Integrations
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#111827] mb-5 leading-tight">
+                Connect the tools you already use.
+              </h2>
+              <p className="text-[#57606D] text-lg leading-relaxed mb-4">
+                3D PrintForce works alongside the software that runs your print farm. Connect SimplyPrint to automate your print queue, sync files with Google Drive, and more.
+              </p>
+              <p className="text-sm text-[#57606D] opacity-70">More integrations coming soon.</p>
+            </div>
+
+            {/* RIGHT: integration cards */}
+            <div className="flex-1 w-full">
+              <div className="relative flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:items-start">
+
+                {/* Card 1: SimplyPrint */}
+                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-[#0D9488] flex items-center justify-center">
+                    <span className="text-white font-black text-base leading-none">SP</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#111827] text-sm">SimplyPrint</p>
+                    <p className="text-[#57606D] text-xs mt-0.5">Print queue automation</p>
+                  </div>
+                </div>
+
+                {/* Card 2: Google Drive */}
+                <div className="bg-white border border-[#E3E6EB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm sm:mt-8">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-white border border-[#E3E6EB] flex items-center justify-center text-2xl">
+                    <svg viewBox="0 0 87.3 78" className="w-7 h-7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.6 66.85l3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8H.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
+                      <path d="M43.65 25L29.9 1.2C28.55 2 27.4 3.1 26.6 4.5L1.7 48.4c-.8 1.38-1.2 2.93-1.2 4.5h27.45z" fill="#00ac47"/>
+                      <path d="M73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5H59.85l5.85 11.2z" fill="#ea4335"/>
+                      <path d="M43.65 25L57.4 1.2C56.05.4 54.5 0 52.9 0H34.4c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/>
+                      <path d="M59.85 52.9H27.45L13.7 76.7c1.35.8 2.9 1.25 4.5 1.25h50.9c1.6 0 3.15-.45 4.5-1.25z" fill="#2684fc"/>
+                      <path d="M73.4 26.45l-12.45-21.6C60.15 3.25 59 2.15 57.65 1.35L43.9 25.15 59.85 53H87.3c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#111827] text-sm">Google Drive</p>
+                    <p className="text-[#57606D] text-xs mt-0.5">File sync &amp; storage</p>
+                  </div>
+                </div>
+
+                {/* Card 3: More coming soon */}
+                <div className="bg-[#F9FAFB] border border-dashed border-[#D1D5DB] rounded-xl p-5 flex items-center gap-4 w-full sm:w-56 shadow-sm sm:self-end">
+                  <div className="shrink-0 w-11 h-11 rounded-lg bg-[#F3F4F6] border border-[#E3E6EB] flex items-center justify-center">
+                    <span className="text-[#9CA3AF] font-black text-xl leading-none">+</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#9CA3AF] text-sm">More integrations</p>
+                    <p className="text-[#9CA3AF] text-xs mt-0.5">Coming soon</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* FEATURES */}
       <section id="features" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
