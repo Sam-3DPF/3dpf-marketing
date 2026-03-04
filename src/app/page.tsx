@@ -231,79 +231,75 @@ export default function Home() {
       </section>
 
       {/* BEFORE / AFTER */}
-      <section className="bg-gray-950 py-24">
+      <section className="bg-[#FBFBFA] py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-black text-white text-center mb-3">
-            Managing a print farm without 3D PrintForce is...
+          <h2 className="text-3xl sm:text-4xl font-black text-[#111827] text-center mb-3">
+            Running a print farm without 3D PrintForce is...
           </h2>
-          <p className="text-center text-2xl sm:text-3xl font-black mb-14">
-            <span className="text-red-400">chaotic</span>
-            <span className="text-gray-400"> and </span>
-            <span className="text-red-400">expensive.</span>
+          <p className="text-center text-2xl sm:text-3xl font-black mb-14 text-[#111827]">
+            <span className="text-[#FF7A28]">chaotic and expensive.</span>
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* WITHOUT */}
-            <div className="bg-gray-900 border border-red-900/40 rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-9 h-9 rounded-lg bg-red-900/60 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="bg-white border border-[#FEF2F2] rounded-lg p-5">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-8 rounded-md bg-[#FEF2F2] flex items-center justify-center">
+                  <svg className="w-4 h-4 text-[#EF4444]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </span>
-                <span className="font-bold text-red-400 text-lg">Without 3D PrintForce</span>
+                <span className="font-bold text-[#111827] text-base">Without 3D PrintForce</span>
               </div>
-              <ul className="space-y-5">
+              <ul className="space-y-4">
                 {[
-                  "Tracking orders across Etsy and Amazon in separate tabs and spreadsheets",
-                  "Guessing at profit margins until the end of the month — then being surprised",
-                  "Manually calculating filament, labor, and shipping for every single listing",
-                  "Orders slip through the cracks when you're busy at the printer",
-                  "No idea which products are actually making you money",
+                  "Etsy isn't built for order fulfillment. Hard to know what's been printed, what's ready to ship, and what's still waiting.",
+                  "Guessing at your profit margin until the end of the month — then being surprised by the number.",
+                  "Manually re-calculating listing financials every time you update a price.",
+                  "No way to know which orders have been printed and are ready to ship without digging through every order individually.",
+                  "No idea which products are actually making you money.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-4 h-4 text-red-500 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-4 h-4 text-[#EF4444] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
-                    <span className="text-gray-400 text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#57606D] text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* WITH */}
-            <div className="bg-gray-900 border border-green-900/40 rounded-2xl p-8">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-9 h-9 rounded-lg bg-green-900/60 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="bg-white border border-[#F0FDF4] rounded-lg p-5">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-8 h-8 rounded-md bg-[#F0FDF4] flex items-center justify-center">
+                  <svg className="w-4 h-4 text-[#22C55E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </span>
-                <span className="font-bold text-green-400 text-lg">With 3D PrintForce</span>
+                <span className="font-bold text-[#111827] text-base">With 3D PrintForce</span>
               </div>
-              <ul className="space-y-5">
+              <ul className="space-y-4">
                 {[
-                  "Every order from every platform in one dashboard, synced automatically",
-                  "Real profit per order calculated the moment it comes in — no surprises",
-                  "Costs attached to every model once. Filament, labor, shipping — done.",
-                  "New orders go straight to your print queue without you touching anything",
-                  "Know exactly which listings to scale and which ones to drop",
+                  "Every order synced from Etsy and Amazon with a clear status — New, Printing, Printed, Shipped. You always know what's next.",
+                  "Real profit per order calculated the moment it comes in — no surprises at the end of the month.",
+                  "Update a price once. Every listing recalculates automatically.",
+                  "One view shows you exactly what's printed and ready to ship — no digging required.",
+                  "Know exactly which listings to scale and which ones to drop.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <svg className="w-4 h-4 text-green-400 shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
-                    <span className="text-gray-300 text-sm leading-relaxed">{item}</span>
+                    <span className="text-[#57606D] text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
 
-          <p className="text-center text-white font-bold text-xl mt-12">
-            3D PrintForce is{" "}
-            <span className="text-orange-400 underline decoration-wavy decoration-orange-500/50">everything</span>
-            {" "}your print farm&apos;s business software should have been.
+          <p className="text-center text-[#111827] font-bold text-xl mt-12">
+            3D PrintForce is everything your print farm&apos;s business software should have been.
           </p>
         </div>
       </section>
