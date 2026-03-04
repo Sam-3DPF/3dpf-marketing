@@ -433,6 +433,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOUNDER'S NOTE */}
+      <section className="py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row gap-16 items-start">
+
+            {/* LEFT: text (~60%) */}
+            <div className="flex-[3]">
+              <span className="block text-xs font-bold tracking-widest text-[#FF7A28] uppercase mb-5">
+                About 3D PrintForce
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-[#111827] leading-tight mb-8">
+                We want to make 3D print<br className="hidden sm:block" /> pricing simple.
+              </h2>
+
+              <div className="space-y-5 text-[#57606D] leading-relaxed text-base max-w-xl">
+                <p className="text-[#111827] font-semibold text-lg">
+                  Hey 👋 I&apos;m Sam, the founder of 3D PrintForce.
+                </p>
+
+                <p>
+                  Most 3D print sellers are leaving money on the table. Not because they&apos;re bad at business, but because the tools don&apos;t exist. You&apos;re pricing from gut feeling, tracking orders in a spreadsheet that breaks the moment you update a formula, and guessing at your margins until you run the numbers at month-end and wince.
+                </p>
+
+                <p>
+                  I know because I was doing the same thing. I run my own print farm. I sell on Etsy and Amazon. I was manually updating prices every time PLA went up, digging through Etsy&apos;s order manager to figure out what was printed and what wasn&apos;t, and building increasingly elaborate spreadsheets that required babysitting. At some point I realized: nobody had built the tool I actually needed.
+                </p>
+
+                <p className="font-semibold text-[#111827]">
+                  So I built it. 3D PrintForce is pricing software that knows what your prints actually cost — filament, labor, shipping, platform fees — and surfaces that information in a way you can act on. Connect your Etsy and Amazon shops, and your orders flow in automatically. No spreadsheets. No guessing.
+                </p>
+
+                <p>
+                  Give 3D PrintForce a try, and transform uncertainty into financial clarity.
+                </p>
+
+                <p className="text-[#111827] font-medium pt-2">
+                  — Sam Erickson, Founder
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT: photo placeholder (~40%) */}
+            <div className="flex-[2] flex flex-col items-center w-full">
+              <div className="w-full max-w-xs rounded-xl bg-gray-100 border border-gray-200 aspect-[3/4] flex items-center justify-center">
+                <p className="text-gray-400 text-sm text-center px-4">📸 Sam&apos;s photo coming soon</p>
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-bold text-[#111827] text-sm">Sam Erickson</p>
+                <p className="text-[#57606D] text-xs mt-0.5">Founder, 3D PrintForce</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section id="pricing" className="py-20 bg-[#FAFAF9]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
