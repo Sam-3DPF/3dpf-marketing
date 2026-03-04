@@ -5,14 +5,14 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "3D Print Force — Business Software for 3D Print Sellers",
+  title: "3D PrintForce — Business Software for 3D Print Sellers",
   description:
     "Track every order, cost, and profit across Etsy and Amazon — automatically. The business brain behind 6,200+ print farms.",
   openGraph: {
-    title: "3D Print Force",
+    title: "3D PrintForce",
     description: "Stop running your print farm on spreadsheets.",
     url: "https://www.3dprintforce.com",
-    siteName: "3D Print Force",
+    siteName: "3D PrintForce",
   },
 };
 

@@ -40,7 +40,7 @@ const FEATURES = [
 const TESTIMONIALS = [
   {
     quote:
-      "I was losing money on almost every Amazon order and didn't know it. 3D Print Force showed me exactly where my margins were bleeding. Raised my prices 20% the next week.",
+      "I was losing money on almost every Amazon order and didn't know it. 3D PrintForce showed me exactly where my margins were bleeding. Raised my prices 20% the next week.",
     name: "Marcus T.",
     role: "Etsy seller, 12 printers",
   },
@@ -80,28 +80,28 @@ const GROWTH_FEATURES = [
 
 const FAQS = [
   {
-    q: "Is there a free trial?",
-    a: "Yes. You get 14 days of full Growth tier access, no credit card required.",
+    q: "What's the difference between Starter and Growth?",
+    a: "Starter ($15/mo) gets you the core cost calculators, basic model tracking, and manual entry. It's fine if you're just getting started and want the math to work. Growth ($39/mo) is the full thing: Etsy sync, SimplyPrint integration, profit dashboard, unlimited models, and priority support. If you're selling on Etsy, you'll want Growth. The Etsy sync alone is worth the difference — pulling your listings in manually gets old fast.",
   },
   {
-    q: "Can I keep my current Bubble pricing?",
-    a: "Yes. If you're a current subscriber migrating from Bubble, your price is grandfathered as long as your subscription stays active.",
+    q: "How does the 14-day trial work?",
+    a: "You get 14 days on the Growth plan, no credit card required. Full access, no watermarks, no \"upgrade to see this\" gates. At the end of 14 days, you pick a plan or your account goes on hold. No surprise charges, ever. One trial per account — if you need more time, just reply and ask.",
   },
   {
-    q: "Does it work with Etsy and Amazon?",
-    a: "Yes. Connect both platforms and orders import automatically. Status updates sync back when you mark orders as shipped.",
+    q: "What happens to my old Bubble account?",
+    a: "Your Bubble account will stay accessible until April 30, 2026. After that, it's gone. The new platform doesn't import your Bubble data automatically — you'll need to set things up fresh. I know that's annoying. Here's why it's actually fine: the old platform had enough bugs that a clean start is better than carrying corrupted data over.",
   },
   {
-    q: "What is SimplyPrint?",
-    a: "SimplyPrint is a 3D printer management platform. 3D Print Force integrates with it to automatically queue print jobs the moment an order comes in.",
+    q: "How does Etsy sync work?",
+    a: "Connect your shop under Settings → Integrations → Etsy. It pulls in your active listings — title, price, and sale data. From there, you attach your models and materials to each listing, and the calculator works out your actual margin. It syncs regularly. If you update a listing on Etsy, give it a bit and it'll reflect.",
   },
   {
-    q: "Can I cancel anytime?",
-    a: "Yes. No contracts, no cancellation fees. Cancel from your account page at any time.",
+    q: "How do I cancel?",
+    a: "Go to Settings → Billing → Cancel Subscription. Takes about 30 seconds. No retention loop, no \"are you sure? are you REALLY sure?\" — just cancel. Your data sticks around for 90 days after you cancel in case you change your mind.",
   },
   {
-    q: "I sell on other platforms. Can I still use 3D Print Force?",
-    a: "Yes. You can manually enter orders from any platform. Automatic sync is available for Etsy and Amazon on the Growth plan.",
+    q: "What if something is broken or I have a problem?",
+    a: "Email sam@3dprintforce.com directly. I check it myself. I'm not going to send you to a ticket system and have you wait a week. If something's clearly a bug, I'll log it and fix it. If it's user error, I'll walk you through it without making you feel dumb.",
   },
 ];
 
@@ -144,8 +144,8 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 font-bold text-lg text-gray-900">
-            <span className="w-7 h-7 rounded-lg bg-orange-500 flex items-center justify-center text-white text-xs font-black">3D</span>
-            3D Print Force
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="3D PrintForce" className="h-8 w-auto" />
           </a>
           <div className="hidden sm:flex items-center gap-6">
             {NAV_LINKS.map((l) => (
@@ -207,7 +207,7 @@ export default function Home() {
       <section className="bg-gray-900 py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-gray-400 text-sm font-medium uppercase tracking-widest mb-8">
-            6,200+ print farms trust 3D Print Force
+            6,200+ print farms trust 3D PrintForce
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {[
@@ -440,9 +440,15 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="bg-gray-950 py-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="w-6 h-6 rounded bg-orange-500 flex items-center justify-center text-white text-xs font-black">3D</span>
-            <span className="text-gray-400 text-sm font-medium">3D Print Force — Built for 3D print sellers.</span>
+          <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="3D PrintForce" className="h-6 w-auto opacity-60" />
+            <span className="text-gray-500 text-sm">
+              Run by a real human —{" "}
+              <a href="https://www.youtube.com/@3DDesignBros" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200 underline transition-colors">
+                Sam Erickson
+              </a>
+            </span>
           </div>
           <div className="flex gap-6">
             <a href="https://dev.3dprintforce.com/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy Policy</a>
