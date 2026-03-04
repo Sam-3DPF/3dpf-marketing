@@ -79,7 +79,7 @@ const GROWTH_FEATURES = [
 ];
 
 // TODO: update RUN_BY_HUMAN_URL with Sam's personal page link
-const RUN_BY_HUMAN_URL = "/human";
+const RUN_BY_HUMAN_URL = "/sam";
 
 const FAQS: { q: string; a: React.ReactNode }[] = [
   {
@@ -446,7 +446,7 @@ export default function Home() {
             <img src="/logo.png" alt="3D PrintForce" className="h-6 w-auto opacity-60" />
             <span className="text-gray-500 text-sm">
               Run by a real human —{" "}
-              <a href="/human" className="text-gray-400 hover:text-gray-200 underline transition-colors">
+              <a href="/sam" className="text-gray-400 hover:text-gray-200 underline transition-colors">
                 Sam Erickson
               </a>
             </span>
